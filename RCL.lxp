@@ -2,6 +2,7 @@ var preDirectional = IIF (IsEmpty($feature.LSt_PreDir),"", " " + $feature.LSt_Pr
 var preType = IIF (IsEmpty($feature.LSt_PreType), "", " " + $feature.LSt_PreType)
 var streetName = IIF (IsEmpty($feature.LSt_Name), "", " " + $feature.LSt_Name)
 var streetType = IIF (IsEmpty($feature.LSt_Type), "", " " + $feature.LSt_Type)
+var postDirectional = IIF (IsEmpty($feature.LSt_PosDir), "", " " + $feature.LSt_PosDir)
 
-var label = Trim(Concatenate(preDirectional, preType, streetName, streetType))
+var label = Trim(Concatenate(preDirectional, preType, streetName, streetType, postDirectional))
 return label
