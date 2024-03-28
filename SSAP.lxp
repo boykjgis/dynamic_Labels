@@ -1,0 +1,14 @@
+var AddNum_Pre = IIF (IsEmpty($feature.AddNum_Pre),"", " " + $feature.AddNum_Pre)
+var Add_Number = IIF (IsEmpty($feature.Add_Number),"", " " + $feature.Add_Number)
+var AddNum_Suf = IIF (IsEmpty($feature.AddNum_Suf),"", " " + $feature.AddNum_Suf)
+var LSt_PreDir = IIF (IsEmpty($feature.LSt_PreDir),"", " " + $feature.LSt_PreDir)
+var LSt_Name = IIF (IsEmpty($feature.LSt_Name),"", " " + $feature.LSt_Name)
+var LSt_Type = IIF (IsEmpty($feature.LSt_Type),"", " " + $feature.LSt_Type)
+var LSt_PosDir = IIF (IsEmpty($feature.LSt_PosDir),"", " " + $feature.LSt_PosDir)
+var Building = IIF (IsEmpty($feature.Building),"", " " + $feature.Building)
+var Floor_ = IIF (IsEmpty($feature.Floor),"", " " + $feature.Floor)
+var Unit = IIF (IsEmpty($feature.Unit),"", " " + $feature.Unit)
+var Room = IIF (IsEmpty($feature.Room),"", " " + $feature.Room)
+
+var label = Trim(Concatenate(AddNum_Pre, Add_Number,AddNum_Suf, LSt_PreDir, LSt_Name, LSt_Type, LSt_PosDir, Building, Floor_, Unit, Room)) + " " + $feature.Post_Code + " " +$feature.Post_Comm
+return label
