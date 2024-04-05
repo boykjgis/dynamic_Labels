@@ -9,6 +9,7 @@ var Building = IIF (IsEmpty($feature.Building),"", " " + $feature.Building)
 var Floor_ = IIF (IsEmpty($feature.Floor),"", " " + $feature.Floor)
 var Unit = IIF (IsEmpty($feature.Unit),"", " " + $feature.Unit)
 var Room = IIF (IsEmpty($feature.Room),"", " " + $feature.Room)
+var AdditionalLocationInformation = IIF(IsEmpty($feature.Addtl_Loc), "", " " + $feature.Addtl_Loc)
 
-var label = Trim(Concatenate(AddNum_Pre, Add_Number,AddNum_Suf, LSt_PreDir, LSt_Name, LSt_Type, LSt_PosDir, Building, Floor_, Unit, Room)) + " " + $feature.Post_Code + " " +$feature.Post_Comm
+var label = Trim(Concatenate(AddNum_Pre, Add_Number,AddNum_Suf, LSt_PreDir, LSt_Name, LSt_Type, LSt_PosDir, Building, Floor_, Unit, Room, ",", AdditionalLocationInformation)) + " " + $feature.Post_Code + " " +$feature.Post_Comm
 return label
